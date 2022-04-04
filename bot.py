@@ -3,8 +3,8 @@ from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 from vk_api.utils import get_random_id
 
-admins = {"148376704", "253106080"}
-group = "118577465"
+admins = {"*******", "*******"}
+group = "*******"
 turn_off = list()
 
 mens = {
@@ -236,14 +236,14 @@ def about_us(id):
               "✔️Курс Визажист\n" +
               "✔️Курс Сам себе визажист\n" +
               "А также сможете получить все виды парикмахерских услуг, макияж, прически☝️😊\n" +
-              "Мы с нетерпением ждём вас по адресу : г. Пермь, ул. Челюскинцев, 23\n" +
+              "Мы с нетерпением ждём вас по адресу : *******\n" +
               "Будем рады видеть у нас в качестве клиентов, учеников и моделей😍😊\n",
               set_key([['Запись'], ['Выход в меню']])
               )
     for event in longpoll.listen():
         if event.type == VkEventType.MESSAGE_NEW and event.text and event.to_me:
             if event.text == "Запись":
-                send_butt(event.user_id, "Мастер Анна - 89655790369 \n Мастер Наталья - 89655723692",
+                send_butt(event.user_id, "Мастер Анна - ******* \n Мастер Наталья - *******",
                           set_key([[], ['Выход']]))
                 for event in longpoll.listen():
                     if event.type == VkEventType.MESSAGE_NEW and event.text and event.to_me:
@@ -351,7 +351,7 @@ while 1 == 1:
                         for admin in admins:
                             send(admin, "Пользователь {} {} требует внимания, ссылка на диалог - {}".format(get_atr(event.user_id, 'first_name'), get_atr(event.user_id, 'last_name'), "https://vk.com/gim" + group + "?sel=" + str(event.user_id)))
                     elif event.text == "Запись":
-                        send_butt(event.user_id, "Мастер Анна - 89655790369 \n Мастер Наталья - 89655723692", set_key([['Меню', 'Администратор', 'Запись'], ['Выключить']]))
+                        send_butt(event.user_id, "Мастер Анна - *******", set_key([['Меню', 'Администратор', 'Запись'], ['Выключить']]))
                     elif event.text == "Помощь":
                         help_msg(event.user_id)
                     elif event.text == "Привет":
